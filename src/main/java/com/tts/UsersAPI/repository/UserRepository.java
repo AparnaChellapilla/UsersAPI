@@ -4,7 +4,6 @@ import com.tts.UsersAPI.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.List;
 
 @Repository
