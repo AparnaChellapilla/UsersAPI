@@ -33,17 +33,12 @@ public class UserController {
 
 
     @GetMapping("/users/{id}")
-    public Optional<User> getUserById(@PathVariable(value = "id") Long id) {
+    public Optional<User> getUserById(@PathVariable(value="id") Long id) {
         return userRepository.findById(id);
     }
 
-    @PostMapping("/users")
-    public void createUser(@RequestBody User user) {
-        userRepository.save(user);
-    }
-
     @PutMapping("/users/{id}")
-    public void createUser(@PathVariable(value="id") Long id, @RequestBody User user){
+    public void createUser(@PathVariable Long id, @RequestBody User user){
         userRepository.save(user);
     }
 
@@ -69,5 +64,10 @@ public class UserController {
             return (List<User>) userRepository.findByState(state);
         }
         return (List<User>) userRepository.findAll();
+    }
+
+    @PostMapping("/users")
+    public void createUser(@RequestBody User user) {
+        userRepository.save(user);
     }
 }
