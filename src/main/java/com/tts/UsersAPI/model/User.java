@@ -26,13 +26,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-   @Size(min = 3, max = 25)
-
+   @Size(min = 2, max = 25)
     private String firstName;
-
-    @Size(min = 3, max = 25)
+    @Size(min = 2, max = 20)
     private String lastName;
-
+    @Size(min = 2, max = 20)
     private String state;
 
 
